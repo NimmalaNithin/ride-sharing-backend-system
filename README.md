@@ -36,8 +36,10 @@ This endpoint allows adding a driver to the system.
   "name": "Nithin",
   "location": { "x": 5, "y": 5 }
 }
+```
 
 **Response:**
+```json
 {
     "id": "c1eae587-c0c5-476f-bab2-553eb6d080e2",
     "name": "Nithin",
@@ -45,8 +47,9 @@ This endpoint allows adding a driver to the system.
     "y": 5.0,
     "status": "AVAILABLE"
 }
+```
 
-
+### Request Ride
 **Endpoint:** `POST /api/rides/requestRide`
 This endpoint allows a passenger to request a ride by providing their start location and end location. The system assigns the nearest available driver. If no driver is available the system informs it to user.
 
@@ -57,34 +60,47 @@ This endpoint allows a passenger to request a ride by providing their start loca
     "startLocation":{"x":3,"y":3},
     "endLocation":{"x":7,"y":15}
 }
+```
 
 **Response:**(if a driver is available)
+```json
 {
     "driver": "Nithin",
     "fare": 12.649110640673518,
     "tripStartTime": "2025-01-25T18:55:11.6734583"
 }
+```
 
 **Response:**(if a driver is not available)
+```json
 {
     "status": 404,
     "message": "No available driver available"
 }
+```
 
 ## Installation
 Follow these steps to set up the project locally:
 
 **Clone the repository:**
+```powershell
 git clone https://github.com/yourusername/ride-sharing-backend.git
+```
 
 **Navigate to the project directory:**
+```powershell
 cd ride-sharing-backend
+```
 
 **Build the project:**
+```powershell
 ./mvnw clean install
+```
 
 **Run the application:**
+```powershell
 ./mvnw spring-boot:run
+```
 
 The backend will be running at http://localhost:8080.
 
